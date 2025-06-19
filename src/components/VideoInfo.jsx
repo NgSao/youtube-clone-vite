@@ -1,3 +1,4 @@
+"use client"
 
 import { useState } from "react"
 import PropTypes from "prop-types"
@@ -106,7 +107,7 @@ const VideoInfo = ({ video }) => {
             <div className="video-description">
                 <div className="description-preview">
                     <div className="description-meta">
-                        <span className="hashtags">#saonguyen #snd </span>
+                        <span className="hashtags">#saonguyen #snd #youtube #video</span>
                     </div>
                     <p className={`description-text ${showFullDescription ? "expanded" : ""}`}>
                         {snippet.description || "Chúc các bạn xem stream vui vẻ. ...thêm"}
@@ -127,4 +128,3 @@ VideoInfo.propTypes = {
 }
 
 export default VideoInfo
-
