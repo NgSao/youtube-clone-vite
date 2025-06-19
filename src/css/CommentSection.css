@@ -1,0 +1,221 @@
+/* CSS Variables for CommentSection theming */
+:root {
+    --comment-bg: #ffffff;
+    --comment-text: #0f0f0f;
+    --comment-secondary: #606060;
+    --comment-border: #e5e5e5;
+    --comment-hover: #f2f2f2;
+    --comment-input-bg: #ffffff;
+    --comment-button-bg: #065fd4;
+    --comment-active-border: #0f0f0f;
+}
+
+[data-theme="dark"] {
+    --comment-bg: #0f0f0f;
+    --comment-text: #ffffff;
+    --comment-secondary: #aaaaaa;
+    --comment-border: #333333;
+    --comment-hover: #272727;
+    --comment-input-bg: #1a1a1a;
+    --comment-button-bg: #3ea6ff;
+    --comment-active-border: #ffffff;
+}
+
+.comment-section {
+    margin-top: 24px;
+    background: var(--comment-bg);
+    transition: background-color 0.3s ease;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.comment-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--comment-text);
+    transition: color 0.3s ease;
+}
+
+.sort-options {
+    display: flex;
+    gap: 16px;
+}
+
+.sort-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--comment-secondary);
+    cursor: pointer;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.sort-btn.active {
+    color: var(--comment-text);
+    border-bottom-color: var(--comment-active-border);
+}
+
+.add-comment {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.user-avatar .avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: #00579c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+}
+
+.comment-input-container {
+    flex: 1;
+}
+
+.comment-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--comment-border);
+    padding: 8px 0;
+    font-size: 14px;
+    outline: none;
+    background: var(--comment-input-bg);
+    color: var(--comment-text);
+    transition: all 0.3s ease;
+}
+
+.comment-input:focus {
+    border-bottom-color: var(--comment-active-border);
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.comment-item {
+    display: flex;
+    gap: 12px;
+}
+
+.comment-avatar .avatar-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.author-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--comment-text);
+    transition: color 0.3s ease;
+}
+
+.comment-time {
+    font-size: 12px;
+    color: var(--comment-secondary);
+    transition: color 0.3s ease;
+}
+
+.comment-text {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--comment-text);
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.comment-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.comment-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    font-size: 12px;
+    color: var(--comment-secondary);
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.comment-action-btn:hover {
+    background: var(--comment-hover);
+}
+
+.replies-section {
+    margin-top: 12px;
+}
+
+.show-replies-btn {
+    background: none;
+    border: none;
+    color: var(--comment-button-bg);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.replies-list {
+    margin-top: 12px;
+    padding-left: 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.reply-item {
+    display: flex;
+    gap: 12px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+    .comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .comment-header h3 {
+        font-size: 18px;
+    }
+
+    .replies-list {
+        padding-left: 32px;
+    }
+}

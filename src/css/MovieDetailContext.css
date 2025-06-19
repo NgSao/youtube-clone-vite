@@ -1,0 +1,179 @@
+.youtube-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.youtube-modal {
+    position: relative;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 90vw;
+    max-height: 90vh;
+    outline: none;
+    width: 100%;
+}
+
+.youtube-player-container {
+    position: relative;
+    width: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 10000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+    .youtube-modal-overlay {
+        padding: 10px;
+    }
+
+    .youtube-modal {
+        max-width: 95vw;
+        max-height: 85vh;
+        border-radius: 6px;
+    }
+
+    .close-btn {
+        top: -45px;
+        right: -5px;
+        font-size: 28px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .youtube-player-container iframe {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .youtube-modal-overlay {
+        padding: 5px;
+    }
+
+    .youtube-modal {
+        max-width: 98vw;
+        max-height: 80vh;
+        border-radius: 4px;
+    }
+
+    .close-btn {
+        top: -40px;
+        right: -10px;
+        font-size: 24px;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .youtube-modal-overlay {
+        padding: 15px;
+    }
+
+    .youtube-modal {
+        max-width: 85vw;
+        max-height: 85vh;
+    }
+
+    .close-btn {
+        top: -45px;
+        font-size: 30px;
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+    .youtube-modal {
+        max-width: 80vw;
+        max-height: 80vh;
+    }
+
+    .close-btn {
+        top: -50px;
+        font-size: 32px;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+    .youtube-modal {
+        max-width: 70vw;
+        max-height: 75vh;
+    }
+
+    .close-btn {
+        top: -55px;
+        font-size: 36px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* Ultra Wide */
+@media (min-width: 1920px) {
+    .youtube-modal {
+        max-width: 60vw;
+        max-height: 70vh;
+    }
+
+    .close-btn {
+        top: -60px;
+        font-size: 40px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+    .youtube-modal-overlay {
+        padding: 5px;
+    }
+
+    .youtube-modal {
+        max-width: 95vw;
+        max-height: 90vh;
+    }
+
+    .close-btn {
+        top: -35px;
+        right: 5px;
+    }
+}

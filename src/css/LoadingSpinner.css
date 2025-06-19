@@ -1,0 +1,54 @@
+/* CSS Variables for LoadingSpinner theming */
+:root {
+    --spinner-bg: #ffffff;
+    --spinner-text: #606060;
+    --spinner-primary: #cc0000;
+    --spinner-track: #f3f3f3;
+}
+
+[data-theme="dark"] {
+    --spinner-bg: #0f0f0f;
+    --spinner-text: #aaaaaa;
+    --spinner-primary: #ff4444;
+    --spinner-track: #333333;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background: var(--spinner-bg);
+    transition: background-color 0.3s ease;
+}
+
+.loading-spinner {
+    text-align: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--spinner-track);
+    border-top: 4px solid var(--spinner-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 16px;
+    transition: border-color 0.3s ease;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner p {
+    color: var(--spinner-text);
+    font-size: 14px;
+    transition: color 0.3s ease;
+}

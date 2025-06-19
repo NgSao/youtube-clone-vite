@@ -1,0 +1,349 @@
+/* CSS Variables for VideoCard theming */
+:root {
+    --card-bg: #ffffff;
+    --card-hover-bg: #f9f9f9;
+    --card-text-primary: #0f0f0f;
+    --card-text-secondary: #606060;
+    --card-border: #e5e5e5;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --avatar-bg: #00579c;
+    --duration-bg: rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="dark"] {
+    --card-bg: #1a1a1a;
+    --card-hover-bg: #272727;
+    --card-text-primary: #ffffff;
+    --card-text-secondary: #aaaaaa;
+    --card-border: #333333;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --avatar-bg: #00579c;
+    --duration-bg: rgba(0, 0, 0, 0.9);
+}
+
+.video-card {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    max-width: 100%;
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.video-card:hover {
+    transform: translateY(-2px);
+    background: var(--card-hover-bg);
+    box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.video-card:hover .thumbnail-img {
+    transform: scale(1.02);
+}
+
+.video-duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: var(--duration-bg);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.video-info {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.channel-avatar {
+    flex-shrink: 0;
+}
+
+.avatar-placeholder {
+    width: 36px;
+    height: 36px;
+    background-color: var(--avatar-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.video-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.video-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--card-text-primary);
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-wrap: break-word;
+    hyphens: auto;
+    transition: color 0.3s ease;
+}
+
+.channel-name {
+    font-size: 12px;
+    color: var(--card-text-secondary);
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.3s ease;
+}
+
+.video-meta {
+    font-size: 12px;
+    color: var(--card-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    .video-card {
+        padding: 6px;
+        margin-bottom: 6px;
+    }
+
+    .video-thumbnail {
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    .video-duration {
+        bottom: 6px;
+        right: 6px;
+        padding: 1px 4px;
+        font-size: 11px;
+    }
+
+    .video-info {
+        gap: 8px;
+    }
+
+    .avatar-placeholder {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .video-title {
+        font-size: 13px;
+        line-height: 1.3;
+        margin-bottom: 3px;
+    }
+
+    .channel-name {
+        font-size: 11px;
+        margin-bottom: 1px;
+    }
+
+    .video-meta {
+        font-size: 11px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+    .video-thumbnail {
+        border-radius: 6px;
+        margin-bottom: 6px;
+    }
+
+    .video-duration {
+        bottom: 4px;
+        right: 4px;
+        font-size: 10px;
+    }
+
+    .video-info {
+        gap: 6px;
+    }
+
+    .avatar-placeholder {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+    }
+
+    .video-title {
+        font-size: 12px;
+        -webkit-line-clamp: 3;
+    }
+
+    .channel-name {
+        font-size: 10px;
+    }
+
+    .video-meta {
+        font-size: 10px;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .video-thumbnail {
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .video-info {
+        gap: 10px;
+    }
+
+    .avatar-placeholder {
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+
+    .video-title {
+        font-size: 13px;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+    .video-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .video-title {
+        font-size: 14px;
+    }
+
+    .channel-name {
+        font-size: 12px;
+    }
+
+    .video-meta {
+        font-size: 12px;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+    .video-thumbnail {
+        border-radius: 14px;
+        margin-bottom: 14px;
+    }
+
+    .video-info {
+        gap: 14px;
+    }
+
+    .avatar-placeholder {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+    }
+
+    .video-title {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .channel-name {
+        font-size: 13px;
+        margin-bottom: 3px;
+    }
+
+    .video-meta {
+        font-size: 13px;
+    }
+}
+
+/* Ultra Wide */
+@media (min-width: 1920px) {
+    .video-thumbnail {
+        border-radius: 16px;
+        margin-bottom: 16px;
+    }
+
+    .video-info {
+        gap: 16px;
+    }
+
+    .avatar-placeholder {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .video-title {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .channel-name {
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+
+    .video-meta {
+        font-size: 14px;
+    }
+}
+
+/* Focus styles for accessibility */
+.video-card:focus-visible {
+    outline: 2px solid #1976d2;
+    outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .video-card {
+        border: 2px solid var(--card-border);
+    }
+
+    .video-duration {
+        border: 1px solid white;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .video-card,
+    .thumbnail-img,
+    .video-title,
+    .channel-name,
+    .video-meta {
+        transition: none;
+    }
+}

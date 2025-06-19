@@ -1,0 +1,393 @@
+/* CSS Variables for Header theming */
+:root {
+    --header-bg: #ffffff;
+    --header-border: #e5e5e5;
+    --header-text: #030303;
+    --header-hover: #f2f2f2;
+    --header-shadow: rgba(0, 0, 0, 0.1);
+    --logo-text-color: #030303;
+    --icon-fill: #030303;
+    --profile-bg: #00579c;
+}
+
+[data-theme="dark"] {
+    --header-bg: #0f0f0f;
+    --header-border: #333333;
+    --header-text: #ffffff;
+    --header-hover: rgba(255, 255, 255, 0.1);
+    --header-shadow: rgba(0, 0, 0, 0.3);
+    --logo-text-color: #ffffff;
+    --icon-fill: #ffffff;
+    --profile-bg: #00579c;
+}
+
+.youtube-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--header-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 1000;
+    box-shadow: 0 1px 2px var(--header-shadow);
+    transition: all 0.3s ease;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+    flex-shrink: 0;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    transition: background-color 0.2s ease;
+}
+
+.menu-btn:hover {
+    background-color: var(--header-hover);
+}
+
+.menu-btn svg {
+    fill: var(--icon-fill);
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 8px;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo svg {
+    transition: opacity 0.3s ease;
+}
+
+.logo-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--logo-text-color);
+    letter-spacing: -0.5px;
+    transition: color 0.3s ease;
+}
+
+.header-center {
+    flex: 1;
+    max-width: 640px;
+    margin: 0 40px;
+    min-width: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.icon-btn:hover {
+    background-color: var(--header-hover);
+}
+
+.icon-btn svg {
+    fill: var(--icon-fill);
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s ease;
+}
+
+.profile-btn {
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.profile-btn:hover {
+    transform: scale(1.05);
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    background-color: var(--profile-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.profile-avatar svg {
+    fill: white;
+    width: 20px;
+    height: 20px;
+}
+
+/* Theme Toggle in Header */
+.header-theme-toggle {
+    margin-right: 8px;
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] .youtube-header {
+    background-color: #0f0f0f;
+    border-bottom-color: #333333;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .menu-btn:hover,
+[data-theme="dark"] .icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .menu-btn svg,
+[data-theme="dark"] .icon-btn svg {
+    fill: #ffffff;
+}
+
+[data-theme="dark"] .logo-text {
+    color: #ffffff;
+}
+
+/* Light mode specific adjustments */
+[data-theme="light"] .youtube-header {
+    background-color: #ffffff;
+    border-bottom-color: #e5e5e5;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .menu-btn:hover,
+[data-theme="light"] .icon-btn:hover {
+    background-color: #f2f2f2;
+}
+
+[data-theme="light"] .menu-btn svg,
+[data-theme="light"] .icon-btn svg {
+    fill: #030303;
+}
+
+[data-theme="light"] .logo-text {
+    color: #030303;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .youtube-header {
+        padding: 0 8px;
+    }
+
+    .icon-btn {
+        display: none;
+    }
+
+    .header-left {
+        gap: 8px;
+    }
+
+    .menu-btn {
+        padding: 6px;
+        min-width: 36px;
+        height: 36px;
+    }
+
+    .menu-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .logo {
+        padding: 4px;
+    }
+
+    .logo svg {
+        width: 70px;
+        height: 16px;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .header-center {
+        margin: 0 8px;
+        max-width: none;
+    }
+
+    .header-right {
+        gap: 4px;
+    }
+
+    .icon-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .icon-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .profile-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .profile-avatar svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .header-theme-toggle {
+        margin-right: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .youtube-header {
+        padding: 0 4px;
+    }
+
+    .icon-btn {
+        display: none;
+    }
+
+
+    .header-center {
+        margin: 0 4px;
+    }
+
+    .header-right .icon-btn:first-child {
+        display: none;
+    }
+
+    .header-theme-toggle {
+        margin-right: 2px;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .youtube-header {
+        border-bottom-width: 2px;
+    }
+
+    .menu-btn,
+    .icon-btn {
+        border: 1px solid var(--header-border);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+
+    .youtube-header,
+    .menu-btn,
+    .icon-btn,
+    .logo,
+    .profile-btn,
+    .profile-avatar,
+    .menu-btn svg,
+    .icon-btn svg,
+    .logo-text {
+        transition: none;
+    }
+}
+
+/* Focus styles for accessibility */
+.menu-btn:focus-visible,
+.icon-btn:focus-visible,
+.profile-btn:focus-visible,
+.logo:focus-visible {
+    outline: 2px solid #1976d2;
+    outline-offset: 2px;
+}
+
+/* Animation for theme transitions */
+@keyframes themeTransition {
+    from {
+        opacity: 0.8;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.youtube-header {
+    animation: themeTransition 0.3s ease-out;
+}
+
+/* Hover effects enhancement */
+.menu-btn:hover,
+.icon-btn:hover {
+    transform: scale(1.05);
+}
+
+.logo:hover {
+    transform: translateY(-1px);
+}
+
+/* Active states */
+.menu-btn:active,
+.icon-btn:active {
+    transform: scale(0.95);
+}
+
+/* Loading state */
+.youtube-header.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Error state */
+.youtube-header.error {
+    border-bottom-color: #d32f2f;
+}
+
+[data-theme="dark"] .youtube-header.error {
+    border-bottom-color: #ff6b6b;
+}

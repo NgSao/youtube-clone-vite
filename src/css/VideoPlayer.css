@@ -1,0 +1,33 @@
+/* CSS Variables for VideoPlayer theming */
+:root {
+    --player-bg: #000000;
+    --player-border: #e5e5e5;
+}
+
+[data-theme="dark"] {
+    --player-bg: #000000;
+    --player-border: #333333;
+}
+
+.video-player {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--player-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1px solid var(--player-border);
+    transition: border-color 0.3s ease;
+}
+
+.video-player iframe {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 640px) {
+    .video-player {
+        border-radius: 8px;
+        margin-bottom: 12px;
+    }
+}

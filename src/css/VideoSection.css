@@ -1,0 +1,55 @@
+/* CSS Variables for VideoSection theming */
+:root {
+    --section-bg: #ffffff;
+    --section-text: #0f0f0f;
+    --section-border: #e5e5e5;
+}
+
+[data-theme="dark"] {
+    --section-bg: #0f0f0f;
+    --section-text: #ffffff;
+    --section-border: #333333;
+}
+
+.video-section {
+    margin-bottom: 40px;
+    background: var(--section-bg);
+    transition: background-color 0.3s ease;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--section-text);
+    padding: 0 24px;
+    transition: color 0.3s ease;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 0 24px;
+}
+
+@media (max-width: 640px) {
+    .section-title {
+        font-size: 18px;
+        padding: 0 12px;
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 16px;
+        padding: 0 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 0 8px;
+    }
+}

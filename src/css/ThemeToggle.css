@@ -1,0 +1,96 @@
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background: var(--hover-bg);
+}
+
+.toggle-track {
+    width: 40px;
+    height: 20px;
+    background: var(--toggle-track-bg);
+    border-radius: 10px;
+    position: relative;
+    transition: background-color 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.toggle-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--toggle-thumb-bg);
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-thumb.light {
+    left: 1px;
+    background: #ffd700;
+    color: #ff6b00;
+}
+
+.toggle-thumb.dark {
+    left: 21px;
+    background: #4a5568;
+    color: #e2e8f0;
+}
+
+.theme-icon {
+    transition: transform 0.2s ease;
+}
+
+.toggle-thumb:hover .theme-icon {
+    transform: scale(1.1);
+}
+
+/* Light mode variables */
+[data-theme="light"] {
+    --toggle-track-bg: #e2e8f0;
+    --toggle-thumb-bg: #ffd700;
+    --hover-bg: rgba(0, 0, 0, 0.05);
+    --border-color: #cbd5e0;
+}
+
+/* Dark mode variables */
+[data-theme="dark"] {
+    --toggle-track-bg: #2d3748;
+    --toggle-thumb-bg: #4a5568;
+    --hover-bg: rgba(255, 255, 255, 0.1);
+    --border-color: #4a5568;
+}
+
+@media (max-width: 640px) {
+    .toggle-track {
+        width: 36px;
+        height: 18px;
+    }
+
+    .toggle-thumb {
+        width: 16px;
+        height: 16px;
+    }
+
+    .toggle-thumb.dark {
+        left: 19px;
+    }
+
+    .theme-icon {
+        width: 14px;
+        height: 14px;
+    }
+}

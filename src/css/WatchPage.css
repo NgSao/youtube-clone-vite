@@ -1,0 +1,69 @@
+/* CSS Variables for WatchPage theming */
+:root {
+    --watch-bg: #ffffff;
+    --watch-text: #0f0f0f;
+    --watch-error: #d32f2f;
+    --watch-error-bg: #ffebee;
+}
+
+[data-theme="dark"] {
+    --watch-bg: #0f0f0f;
+    --watch-text: #ffffff;
+    --watch-error: #ff6b6b;
+    --watch-error-bg: #2d1b1b;
+}
+
+.watch-page {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 24px;
+    background: var(--watch-bg);
+    color: var(--watch-text);
+    transition: all 0.3s ease;
+}
+
+.watch-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 24px;
+}
+
+.video-section {
+    min-width: 0;
+}
+
+.sidebar-section {
+    min-width: 0;
+}
+
+.error-message {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: var(--watch-error);
+    background: var(--watch-error-bg);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .watch-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .watch-page {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .watch-page {
+        padding: 8px;
+    }
+
+    .watch-content {
+        gap: 12px;
+    }
+}
